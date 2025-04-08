@@ -10,15 +10,21 @@ using System.Windows.Forms;
 
 namespace TestGI
 {
+
+
     public partial class FormTest : Form
     {
 
         TestGeniusIdiot test;
+        TimerForTest timer;
 
         public FormTest()
         {
             InitializeComponent();
+            timer = new TimerForTest(20, 50, 100);
+            this.Controls.Add(timer);
             startTest();
+            timer.Start();
         }
 
         void startTest()
@@ -45,6 +51,7 @@ namespace TestGI
                 { 
                     labelQuestion.Text = test.NextQuestion();
                     labelNumberOfQuestion.Text = "Вопрос №" + test.NumberQuestion();
+                    timer.Start();
                 }
             }
             catch(Exception ex)
@@ -57,5 +64,7 @@ namespace TestGI
         {
             startTest();
         }
+
+       
     }
 }

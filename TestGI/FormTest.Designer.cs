@@ -38,17 +38,18 @@
             // textBoxUserAnswer
             // 
             this.textBoxUserAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxUserAnswer.Location = new System.Drawing.Point(227, 206);
-            this.textBoxUserAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUserAnswer.Location = new System.Drawing.Point(217, 206);
+            this.textBoxUserAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUserAnswer.Name = "textBoxUserAnswer";
             this.textBoxUserAnswer.Size = new System.Drawing.Size(419, 46);
             this.textBoxUserAnswer.TabIndex = 1;
+            this.textBoxUserAnswer.Text = "12";
             // 
             // buttonNextQuestion
             // 
             this.buttonNextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNextQuestion.Location = new System.Drawing.Point(236, 273);
-            this.buttonNextQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonNextQuestion.Location = new System.Drawing.Point(216, 270);
+            this.buttonNextQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNextQuestion.Name = "buttonNextQuestion";
             this.buttonNextQuestion.Size = new System.Drawing.Size(420, 58);
             this.buttonNextQuestion.TabIndex = 2;
@@ -59,8 +60,8 @@
             // buttonNewStart
             // 
             this.buttonNewStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNewStart.Location = new System.Drawing.Point(236, 361);
-            this.buttonNewStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonNewStart.Location = new System.Drawing.Point(217, 373);
+            this.buttonNewStart.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNewStart.Name = "buttonNewStart";
             this.buttonNewStart.Size = new System.Drawing.Size(420, 59);
             this.buttonNewStart.TabIndex = 3;
@@ -100,7 +101,7 @@
             this.Controls.Add(this.buttonNewStart);
             this.Controls.Add(this.buttonNextQuestion);
             this.Controls.Add(this.textBoxUserAnswer);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTest";
             this.Text = "Тест ГЕНИЙ - ИДИОТ";
             this.ResumeLayout(false);
