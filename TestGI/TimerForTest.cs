@@ -32,6 +32,11 @@ namespace TestGI
             timeCurrent = timeTotal;
             timer.Enabled = true;
         }
+        public void Stop()
+        {
+            timeCurrent = timeTotal;
+            timer.Enabled = false;
+        }
 
         private void Timer_Tick(object sender, System.EventArgs e)
         {

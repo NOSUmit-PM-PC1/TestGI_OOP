@@ -27,7 +27,7 @@ namespace TestGI
             timer.TimeCompleted += BreakTime;
         }
 
-        void  BreakTime(object sender, string message)
+        void BreakTime(object sender, string message)
         {
             MessageBox.Show(message);
             NextQuestion();
@@ -48,24 +48,27 @@ namespace TestGI
 
         public void NextQuestion()
         {
+            int userAnswer = int.MinValue;
             try
             {
-                int userAnswer = Convert.ToInt32(textBoxUserAnswer.Text);
-                test.CheckAnswer(userAnswer);
-
-                if (test.EndOfTest())
-                {
-                    MessageBox.Show(test.Diagnose());
-                    buttonNewStart.Visible = true;
-                }
-                else
-                {
-                    ShowQuestion();
-                }
+                userAnswer = Convert.ToInt32(textBoxUserAnswer.Text);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("В ответе может быть только число");
+                if (textBoxUserAnswer.Text != "")
+                    MessageBox.Show("В ответе может быть только число");
+            }
+
+            test.CheckAnswer(userAnswer);
+            if (test.EndOfTest())
+            {
+                timer.Stop();
+                MessageBox.Show(test.Diagnose());
+                buttonNewStart.Visible = true;
+            }
+            else
+            {
+                ShowQuestion();
             }
         }
 
@@ -79,6 +82,6 @@ namespace TestGI
             StartTest();
         }
 
-       
+
     }
 }
