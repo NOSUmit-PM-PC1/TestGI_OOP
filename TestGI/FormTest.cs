@@ -29,6 +29,14 @@ namespace TestGI
 
         void  BreakTime(object sender, string message)
         {
+            try
+            {
+                double temp = Convert.ToDouble(textBoxUserAnswer.Text);
+            }
+            catch
+            {
+                textBoxUserAnswer.Text = "-1";
+            }
             MessageBox.Show(message);
             NextQuestion();
         }
