@@ -9,10 +9,9 @@ namespace TestGI
         int timeTotal;
         int timeCurrent;
         Timer timer;
-        FormTest f;
-        //public event EventHandler<string> WorkCompleted;
+        public event EventHandler<string> TimeCompleted;
 
-        public TimerForTest(int time, int x, int y, FormTest f)
+        public TimerForTest(int time, int x, int y)
         {
             this.timeTotal = time;
             this.Text = time.ToString();
@@ -25,8 +24,7 @@ namespace TestGI
             this.TextAlign = ContentAlignment.MiddleCenter;
             timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 1000;
-            this.f = f;
+            timer.Interval = 100;
         }
 
         public void Start()
@@ -40,9 +38,7 @@ namespace TestGI
             if (timeCurrent == 0)
             {
                 timer.Enabled = false;
-                //WorkCompleted?.Invoke(this, "Время закончилось!");
-                MessageBox.Show("Время закончилось!");
-                f.NextQuestion(); 
+                TimeCompleted?.Invoke(this, "Время закончилось!");
                 return;
             }
             Tick();

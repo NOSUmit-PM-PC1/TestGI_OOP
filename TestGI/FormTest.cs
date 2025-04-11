@@ -21,15 +21,16 @@ namespace TestGI
         public FormTest()
         {
             InitializeComponent();
-            timer = new TimerForTest(20, 50, 100, this);
+            timer = new TimerForTest(20, 50, 100);
             this.Controls.Add(timer);
             StartTest();
-            /*timer.WorkCompleted += (sender, message) =>
-            {
-                MessageBox.Show(message);
-                NextQuestion();
-            };
-            */
+            timer.TimeCompleted += BreakTime;
+        }
+
+        void  BreakTime(object sender, string message)
+        {
+            MessageBox.Show(message);
+            NextQuestion();
         }
 
         void StartTest()
